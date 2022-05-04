@@ -1,0 +1,17 @@
+import React from "react";
+
+function Day({ day, onClick }) {
+  const className = `day ${day.value === "padding" ? "padding" : ""}`;
+  return (
+    <div
+      onClick={onClick}
+      className={className}
+      id={day.isCurrentDay ? "currentDay" : ""}
+    >
+      {day.value === "padding" ? "" : day.value}
+      {day.event && <div className="event">{day.event.title}</div>}
+    </div>
+  );
+}
+
+export default Day;
